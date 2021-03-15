@@ -20,7 +20,7 @@ then wall4_big_room at 2 seconds.
 then wall5_big_room at 3 seconds.
 then wall6_big_room at 4 seconds.
 ...
-then wall22_big_room at 20 seconds
+then wall22_big_room at 20 seconds.
 
 --------------------------------------
 important vars:
@@ -143,7 +143,7 @@ class multi_target : ScriptBaseEntity
 				pEntity.pev.target = pTargetEntity.pev.targetname;
 			}
 			
-			if ( self.pev.SpawnFlagBitSet (SF_KILLTARGET) )
+			if ( pEntity.pev.target == "!killtarget" )
 			{
 				CBaseEntity@ killentity = g_EntityFuncs.FindEntityByString( @killentity, sKeyvalue, sPrefix + string(i) + sSuffix );
 				g_EntityFuncs.Remove( killentity );
